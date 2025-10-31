@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copyright Report Hub | Professional IP Protection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #6c757d;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --border-color: #dee2e6;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-white) 0%, #f8f9fa 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo i {
+            font-size: 28px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        .intro-section {
+            background: var(--primary-white);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .intro-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .intro-section p {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        /* Platform Grid */
+        .platforms-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-primary);
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .platform-card {
+            background: var(--primary-white);
+            border-radius: 16px;
+            padding: 35px 30px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--brand-color), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .platform-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .platform-icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .platform-card:hover .platform-icon-wrapper {
+            transform: scale(1.1);
+        }
+
+        .platform-icon {
+            font-size: 36px;
+        }
+
+        .facebook-wrapper {
+            background: rgba(24, 119, 242, 0.1);
+        }
+        .facebook-icon {
+            color: #1877f2;
+        }
+
+        .instagram-wrapper {
+            background: rgba(228, 64, 95, 0.1);
+        }
+        .instagram-icon {
+            color: #e4405f;
+        }
+
+        .x-wrapper {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        .x-icon {
+            color: #000;
+            font-weight: 700;
+            font-size: 42px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .google-wrapper {
+            background: rgba(66, 133, 244, 0.1);
+        }
+        .google-icon {
+            color: #4285f4;
+        }
+
+        .platform-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .platform-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .report-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-white);
+            color: var(--text-primary);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border: 2px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .report-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--light-gray);
+            transition: width 0.3s;
+            z-index: -1;
+        }
+
+        .report-btn:hover::before {
+            width: 100%;
+        }
+
+        .report-btn:hover {
+            border-color: var(--medium-gray);
+            transform: translateY(-2px);
+        }
+
+        .report-btn i {
+            transition: transform 0.3s;
+        }
+
+        .report-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Info Section */
+        .info-section {
+            background: linear-gradient(135deg, var(--primary-white) 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            background: var(--primary-white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card h3 i {
+            color: #667eea;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-white);
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .heart {
+            color: #e4405f;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro-section, .info-section {
+                padding: 25px;
+            }
+
+            .platform-card {
+                padding: 25px 20px;
+            }
+
+            .platform-icon-wrapper {
+                width: 70px;
+                height: 70px;
+            }
+
+            .platform-icon {
+                font-size: 30px;
+            }
+            
+            .x-icon {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            header {
+                padding: 30px 0;
+            }
+
+            main {
+                padding: 40px 0;
+            }
+
+            .platform-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h1>Copyright Report Hub</h1>
+                <p class="subtitle">Professional Intellectual Property Protection Platform</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="intro-section">
+                <h2>Protect Your Creative Work</h2>
+                <p>Our streamlined platform connects you directly with copyright reporting tools for major social media and tech companies. Safeguard your intellectual property with our professional reporting system.</p>
+                <p>Before submitting a report, ensure you have all necessary documentation and are authorized to act on behalf of the copyright holder. False claims may result in legal consequences.</p>
+            </section>
+
+            <section class="platforms-section">
+                <h2 class="section-title">Select Platform to Report Infringement</h2>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <div class="platform-icon-wrapper facebook-wrapper">
+                            <i class="fab fa-facebook platform-icon facebook-icon"></i>
+                        </div>
+                        <h3 class="platform-name">Facebook</h3>
+                        <p class="platform-description">Report copyright violations on Facebook's platform including posts, images, videos, and shared content.</p>
+                        <a href="https://m.facebook.com/help/contact/copyrightform?wtsid=rdr_0c9ILWDloeFyNgPeP#" target="_blank" class="report-btn">
+                            Report Infringement <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="platform-card">
+                        <div class="platform-icon-wrapper instagram-wrapper">
+                            <i class="fab fa-instagram platform-icon instagram-icon"></i>
+                        </div>
+                        <h3 class="platform-name">Instagram</h3>
+                        <p class="platform-description">Submit copyright claims for unauthorized use of your content on Instagram including photos, videos, and Reels.</p>
+                        <a href="https://help.instagram.com/contact/372592039493026" target="_blank" class="report-btn">
+                            Report Infringement <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="platform-card">
+                        <div class="platform-icon-wrapper x-wrapper">
+                            <div class="platform-icon x-icon">X</div>
+                        </div>
+                        <h3 class="platform-name">X.com</h3>
+                        <p class="platform-description">Report copyright infringement on X.com (formerly Twitter) for tweets, media, and profile content violations.</p>
+                        <a href="https://help.x.com/en/forms/ipi" target="_blank" class="report-btn">
+                            Report Infringement <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="platform-card">
+                        <div class="platform-icon-wrapper google-wrapper">
+                            <i class="fab fa-google platform-icon google-icon"></i>
+                        </div>
+                        <h3 class="platform-name">Google</h3>
+                        <p class="platform-description">Report copyright issues across Google's ecosystem including Search, YouTube, Drive, and other services.</p>
+                        <a href="https://support.google.com/legal/troubleshooter/1114905?hl=en" target="_blank" class="report-btn">
+                            Report Infringement <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2 class="section-title">Reporting Guidelines</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3><i class="fas fa-file-contract"></i> Required Information</h3>
+                        <p>Prepare your contact details, description of copyrighted work, location of infringing material, and a statement of good faith belief before submitting.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-gavel"></i> Legal Requirements</h3>
+                        <p>Under DMCA and similar laws, you must provide accurate information and may be liable for false claims. Consult legal counsel if unsure.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-clock"></i> Processing Time</h3>
+                        <p>Most platforms process valid claims within 24-48 hours. Complex cases may require additional review time.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-shield-alt"></i> Protection Tips</h3>
+                        <p>Consider watermarking your content, monitoring usage regularly, and registering your work with copyright authorities for enhanced protection.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">Made with <span class="heart">❤️</span> by Sauravhhh</p>
+                <p class="footer-text">© 2023 Copyright Report Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+  </html>
